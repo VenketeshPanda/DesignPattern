@@ -25,4 +25,35 @@ public class Student {
     static StudentBuilder getBuilder(){
         return new StudentBuilder();
     }
+
+    public static class StudentBuilder {
+        int age;
+        String batch;
+        String name;
+        int gradYear;
+
+        public StudentBuilder setAge(int age) {
+            this.age = age;
+            return this;
+        }
+
+        public StudentBuilder setBatch(String batch) {
+            this.batch = batch;
+            return this;
+        }
+
+        public StudentBuilder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public StudentBuilder setGradYear(int gradYear) {
+            this.gradYear = gradYear;
+            return this;
+        }
+
+        Student build(){
+            return new Student(this);
+        }
+    }
 }
